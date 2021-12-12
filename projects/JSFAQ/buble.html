@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="myList">
+            <li id="first" class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Placeat, distinctio dolores?</li>
+            <li class="item">Commodi, veritatis! Sit?</li>
+            <li class="item">Odit, aliquid soluta.</li>
+            <li class="item">Rem, asperiores! Doloribus.</li>
+        </ul>
+        <button id="addNewItem">
+            Add New Item
+        </button>
+    </div>
+
+    <script>
+        var items = document.getElementsByTagName('li');
+        for (let i = 0; i < items.length; i++) {
+            const abc = items[i];
+           
+            abc.addEventListener('click',function(event){
+                console.log( event.target.parentNode.removeChild(event.target));
+            })
+            
+        }
+        document.getElementById('addNewItem').addEventListener('click', function(event){
+            var itemParent= document.getElementById('myList');
+            var newItem= document.createElement('li');
+            newItem.innerText= "Brand New Text Item";
+            itemParent.appendChild(newItem);
+
+        })
+
+        // document.getElementById('first').addEventListener('click', function(){
+        //     console.log('First Item Clicked');
+            
+        // })
+        document.getElementById('myList').addEventListener('click', function(event){
+            //console.log('List Item Clicked');
+           // event.stopPropagation(this, event.target);
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        // document.getElementById('container').addEventListener('click', function(){
+        //     console.log('Container Clicked');
+        // })
+    </script>
+</body>
+</html>

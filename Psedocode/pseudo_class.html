@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1::before{
+            content: "hello";
+            color: burlywood;
+            font-size: 12px;
+            background-color: cornflowerblue;
+        }
+        .special-effect::after{
+            content: " good by";
+            font-size: 15px;
+            background-color: crimson;
+        }
+        h1{
+            color: goldenrod;
+        }
+        .special-effect:hover{
+            color: indianred;
+            font-size: 60px;
+            background-color: lawngreen;
+        }
+        input:focus{
+            font-weight: 700;
+            color: lawngreen;
+            font-size: 30px;
+        }
+        li:nth-child(2n){
+            background-color: indianred;
+
+        }
+        a:visited{
+            color:blue;
+        }
+        body {
+  counter-reset: section;                       /* Set a counter named 'section', and its initial value is 0. */
+}
+
+p::before {
+  counter-increment: section;                   /* Increment the value of section counter by 1 */
+  content: "passage 😍" counter(section) ": ";   
+  
+   /* Display the word 'Section ', the value of
+                                                   section counter, and a colon before the content
+                                                   of each h3 */
+}
+    </style>
+</head>
+<body>
+    <h1>Pseudo Class</h1>
+    <h1 class="special-effect">Normal Class</h1>
+    <h1 class="special-effect">Another Class</h1>
+    <input name="email" type="text">
+    <br>
+    <input name="password"  type="text">
+    <br>
+    <a href="https:\\www.youtube.com">Youtube</a>
+    <a href="https:\\www.facebook.com\fizz.sec">Facebook</a>
+    
+        <p>asd</p>
+        <p>acx</p>
+        <p>vds</p>
+        <p>asc</p>
+        <p>asdc</p>
+        <p>xcsa</p>
+        <p>asd</p>
+    
+</body>
+</html>
